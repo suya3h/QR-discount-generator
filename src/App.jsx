@@ -13,7 +13,21 @@ export default function DiscountScratchCard() {
   const [isDrawing, setIsDrawing] = useState(false);
 
   const generateDiscount = () => {
-    return Math.floor(Math.random() * 16) + 5;
+
+     const weighted = [
+    5, 5, 5, 5, 5,        // 5% very common
+    10, 10, 10, 10,       // 10% common
+    15, 15, 15,           // 15% medium
+    16,                   // rare
+    17,                   // rare
+    18,                   // rare
+    19,                   // rare
+    20                    // very rare
+  ];
+
+  const index = Math.floor(Math.random() * weighted.length);
+  return weighted[index];
+};
   };
 
   const handleSubmit = () => {
