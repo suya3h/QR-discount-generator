@@ -28,7 +28,7 @@ export default function DiscountScratchCard() {
   const index = Math.floor(Math.random() * weighted.length);
   return weighted[index];
 };
-  };
+  
 
   const handleSubmit = () => {
     if (customerName && billAmount && parseFloat(billAmount) > 0) {
